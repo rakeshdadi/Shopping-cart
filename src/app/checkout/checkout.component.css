@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+
+.checkout-card {
+  display: block;
+}
+
+.empty-checkout-list {
+  padding: 1.5rem;
+}
+
+.delete-product-btn {
+  background-color: #c94949;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 769px) {
+  .checkout-card {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .empty-checkout-list {
+    padding: 1.5rem;
+  }
+
+  .delete-product-btn {
+    background-color: #c94949;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,46 @@
+<app-header></app-header>
+<app-back-nav
+  [backNavTitle]="baclNavTitle"
+  [backNavLink]="navLink"
+  [buttonTitle]="buttonTitle"
+  [navLink]="navLink"
+  [isBtnDisabled]="isCheckoutBtnDisabled"
+  [itemsInCart]="checkoutListCount"
+></app-back-nav>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
+<div class="row">
+  <h1>Products</h1>
+  <div class="grid-container">
+    <div class="products-cards" *ngFor="let item of displayedData">
+      <h4 class="productName">{{ item.name | titlecase }}</h4>
+      <div class="product-image-section">
+        <img
+          class="product-image"
+          src="{{ item.image_link }}"
+          [routerLink]="['/details', item.id]"
+        />
+      </div>
+      <div class="productDesc">
+        <div class="product-price">
+          {{ item.price | currency }}
+        </div>
+        <button class="add-to-cart-btn" (click)="addToCart(item)">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="float-right" *ngIf="displayedData">
+    <app-pagination
+      [allPagesNumber]="allPages"
+      (changePage)="onPageChange($event)"
+    ></app-pagination>
+  </div>
+</div>

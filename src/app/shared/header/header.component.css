@@ -1,0 +1,23 @@
+.nav-bar {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(189, 200, 214);
+}
+.app-header {
+    font-size: xx-large;
+    padding: 1rem;
+}
+
+.logout-btn {
+    background-color: rgb(189, 200, 214);
+    border: none;
+    color: black;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

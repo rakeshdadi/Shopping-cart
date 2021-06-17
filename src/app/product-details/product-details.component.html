@@ -1,0 +1,44 @@
+<app-header></app-header>
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p>
+</ngx-spinner>
+<app-back-nav
+  [backNavTitle]="baclNavTitle"
+  [backNavLink]="baclNavLink"
+  [buttonTitle]="buttonTitle"
+  [navLink]="navLink"
+  [isBtnDisabled]="isCheckoutBtnDisabled"
+  [itemsInCart]="checkoutListCount"
+></app-back-nav>
+<div *ngIf="productaDetailsData">
+    <h1>Products Details</h1>
+  <div class="product-details-container">
+    <h3>{{ productaDetailsData.name }}</h3>
+    <img class="product-image" src="{{ productaDetailsData.image_link }}" />
+    <div>
+      <label>Brand: {{ productaDetailsData.brand | uppercase }}</label>
+    </div>
+    <div>
+      <label>Price: {{ productaDetailsData.price | currency }}</label>
+    </div>
+  </div>
+  <div class="product-color">
+    <div
+      class="product-color-list"
+      *ngFor="let item of productaDetailsData.product_colors"
+    >
+      <label class="product-label">{{ item.colour_name }}</label>
+      <div class="color" [style.background-color]="item.hex_value"></div>
+    </div>
+  </div>
+  <div class="add-to-cart-section">
+    <button class="add-to-cart-btn" (click)="addToCart()">
+        Add to cart
+      </button>
+  </div>
+</div>

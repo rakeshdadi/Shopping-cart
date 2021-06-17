@@ -1,0 +1,26 @@
+<app-header></app-header>
+<app-back-nav
+  [backNavTitle]="baclNavTitle"
+  [backNavLink]="navLink"
+  [buttonTitle]="buttonTitle"
+  [navLink]="navLink"
+  [isBtnDisabled]="isPlaceOrderBtnDisabled"
+  [itemsInCart]="checkoutListCount"
+></app-back-nav>
+<div class="empty-checkout-list" *ngIf="!hasProcducts">No products avaliable currently.</div>
+<div *ngIf="hasProcducts">
+    <h1>Checkout Details</h1>
+  <div *ngFor="let product of checkoutList">
+    <div class="checkout-card">
+      <div>
+        <p>{{ product.name }}</p>
+        <p>{{ product.price }}</p>
+      </div>
+      <div class="delete-product">
+        <button class="delete-product-btn" (click)="removeFromCart(product)">
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
