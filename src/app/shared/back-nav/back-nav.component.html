@@ -1,10 +1,14 @@
 <div class="nav-bar">
-    <div class="back-nav">
-        <a [routerLink]="[backNavLink]"> {{ backNavTitle }} </a>
-    </div>
-    <div >
-    <button class="checkout-btn" [routerLink]=[navLink] [disabled]="isBtnDisabled">
-        {{buttonTitle}} ({{itemsInCart}})
+  <div class="back-nav">
+    <a [routerLink]="[backNavLink]"> {{ backNavTitle }} </a>
+  </div>
+  <div>
+    <button
+      class="checkout-btn"
+      (click)="onClickBtn()"
+      [disabled]="isBtnDisabled"
+    >
+      {{ buttonTitle }} ({{ itemsInCart }})
     </button>
-    </div>
+  </div>
 </div>

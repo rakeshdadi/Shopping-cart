@@ -1,13 +1,26 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" formControlName="username" placeholder="Enter Username" name="uname" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" formControlName="password" placeholder="Enter Password" name="psw" required>
-  
-      <button [disabled]="loading">
-          Login
-      </button>
+<div class="login-form">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Enter Username"
+        name="uname"
+        required
+      />
     </div>
-</form>
+    <div class="row">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+    </div>
+    <button [disabled]="loading">Login</button>
+  </form>
+</div>

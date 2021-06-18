@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { BackNavComponent } from './shared/back-nav/back-nav.component';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { BackNavComponent } from './shared/back-nav/back-nav.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     FormsModule,

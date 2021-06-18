@@ -1,35 +1,33 @@
 .nav-bar {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 5rem;
 }
 
 .back-nav {
-    padding: 1rem 0;
-    margin-bottom: 0.5rem;
+  padding: 1rem 0;
+  margin-bottom: 0.5rem;
 }
 
 a {
-    text-decoration: none;
-    color: #266fa0;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+  text-decoration: none;
+  color: #266fa0;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.app-header {
-    font-size: xx-large;
-    padding: 1rem;
-}
 .checkout-btn {
-    background-color: #266fa0;
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+  background-color: #266fa0;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

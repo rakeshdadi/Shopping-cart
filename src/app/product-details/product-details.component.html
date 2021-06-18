@@ -8,15 +8,18 @@
   ><p style="color: white">Loading...</p>
 </ngx-spinner>
 <app-back-nav
-  [backNavTitle]="baclNavTitle"
-  [backNavLink]="baclNavLink"
+  [backNavTitle]="backNavTitle"
+  [backNavLink]="backNavLink"
   [buttonTitle]="buttonTitle"
   [navLink]="navLink"
   [isBtnDisabled]="isCheckoutBtnDisabled"
   [itemsInCart]="checkoutListCount"
 ></app-back-nav>
+<div class="error-message">
+  <h1>{{ errorMessage }}</h1>
+</div>
 <div *ngIf="productaDetailsData">
-    <h1>Products Details</h1>
+  <h1>Products Details</h1>
   <div class="product-details-container">
     <h3>{{ productaDetailsData.name }}</h3>
     <img class="product-image" src="{{ productaDetailsData.image_link }}" />
@@ -37,8 +40,6 @@
     </div>
   </div>
   <div class="add-to-cart-section">
-    <button class="add-to-cart-btn" (click)="addToCart()">
-        Add to cart
-      </button>
+    <button class="add-to-cart-btn" (click)="addToCart()">Add to cart</button>
   </div>
 </div>

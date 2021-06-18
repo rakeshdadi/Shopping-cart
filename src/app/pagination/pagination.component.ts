@@ -14,7 +14,7 @@ export class PaginationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   get currentPage(): number {
     return this._currentPage;
@@ -38,11 +38,11 @@ export class PaginationComponent implements OnInit {
   }
 
   onNextPage(): void {
-    this.currentPage += 1;
+    this.currentPage = this.allPagesNumber !== this.currentPage ? this.currentPage + 1 : this.currentPage;
   }
 
   onPreviousPage(): void {
-    this.currentPage -= 1;
+    this.currentPage = this.allPagesNumber !== this.currentPage ? this.currentPage : this.currentPage - 1;
   }
 
 }

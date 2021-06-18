@@ -5,6 +5,9 @@ h1 {
 .products-cards {
   padding: 1rem;
   margin-bottom: 2rem;
+  border: 1px solid #e1e2f0;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
 }
 
 .products-cards:hover {
@@ -27,6 +30,10 @@ h1 {
   padding-bottom: 2rem;
 }
 
+.product-price {
+  padding-top: 0.6rem;
+}
+
 .add-to-cart-btn {
   background-color: #266fa0;
   border: none;
@@ -38,13 +45,11 @@ h1 {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
 }
 
 @media only screen and (min-width: 769px) {
-  h1 {
-    text-align: center;
-  }
-
   .grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -55,6 +60,9 @@ h1 {
     padding: 1rem;
     width: 25%;
     margin-bottom: 2rem;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
   }
 
   .products-cards:hover {
@@ -74,9 +82,5 @@ h1 {
     width: 50%;
     cursor: pointer;
     padding-bottom: 2rem;
-  }
-
-  .product-price {
-    padding-top: 0.6rem;
   }
 }

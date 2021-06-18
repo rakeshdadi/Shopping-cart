@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-back-nav
-  [backNavTitle]="baclNavTitle"
+  [backNavTitle]="backNavTitle"
   [backNavLink]="navLink"
   [buttonTitle]="buttonTitle"
   [navLink]="navLink"
@@ -15,7 +15,10 @@
   [fullScreen]="true"
   ><p style="color: white">Loading...</p></ngx-spinner
 >
-<div class="row">
+<div class="error-message">
+  <h1>{{ errorMessage }}</h1>
+</div>
+<div class="row" *ngIf="displayedData">
   <h1>Products</h1>
   <div class="grid-container">
     <div class="products-cards" *ngFor="let item of displayedData">
@@ -29,7 +32,7 @@
       </div>
       <div class="productDesc">
         <div class="product-price">
-          {{ item.price | currency }}
+          <b><label> Price: &nbsp;</label>{{ item.price | currency }} </b>
         </div>
         <button class="add-to-cart-btn" (click)="addToCart(item)">
           Add to cart

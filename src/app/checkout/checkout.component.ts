@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class CheckoutComponent implements OnInit {
   hasProcducts: boolean = false;
-  checkoutList: any;
+  checkoutList: any = [];
   retrivedList: any;
+  checkoutListCount: number = 0;
+  totalAmount: number = 0;
   buttonTitle: string = 'Place Order';
   navLink: string = '/list';
+  bacKNavTitle: string = 'Back to List';
   isPlaceOrderBtnDisabled: boolean = true;
-  baclNavTitle: string = 'Back to List';
-  checkoutListCount: number = 0;
 
   constructor() { }
 
@@ -22,15 +23,21 @@ export class CheckoutComponent implements OnInit {
     this.retrivedList = localStorage.getItem('products');
     this.checkoutList = JSON.parse(this.retrivedList)
     this.hasProcducts = this.checkoutList?.length > 0 || false;
-    this.isPlaceOrderBtnDisabled = this.checkoutList?.length > 0 || false;
+    this.isPlaceOrderBtnDisabled = this.checkoutList?.length > 0 ? false : true;
     this.checkoutListCount = this.checkoutList.length;
+    this.totalAmount = this.getTotalAmount(this.checkoutList)
   }
 
-  removeFromCart(product: any):void {
+  removeFromCart(product: any): void {
     this.checkoutList = this.checkoutList.filter((item: any) => item.id !== product.id);
+    this.totalAmount = this.getTotalAmount(this.checkoutList)
     localStorage.setItem('products', JSON.stringify(this.checkoutList))
     this.hasProcducts = this.checkoutList?.length > 0 || false;
     this.isPlaceOrderBtnDisabled = this.checkoutList?.length > 0 || true;
     this.checkoutListCount = this.checkoutList.length;
+  }
+
+  getTotalAmount(list: any): number {
+    return list.reduce((acc: any, med: any) => (parseFloat(med.price) ?? 0) + acc, 0)
   }
 }

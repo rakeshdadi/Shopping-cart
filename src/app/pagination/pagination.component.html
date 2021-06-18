@@ -1,26 +1,28 @@
-
 <div class="pagination__container">
-  <div class="pagination__button pagination__page-first"
-       (click)="onFirstPage()"
+  <div
+    class="pagination__button pagination__page-first"
+    (click)="onFirstPage()"
   >
     First
   </div>
-  <div class="pagination__button pagination__page-previous"
-       (click)="onPreviousPage()"
+  <div
+    class="pagination__button pagination__page-previous"
+    (click)="onPreviousPage()"
   >
     Previous
   </div>
   <div class="pagination__page-active">
-    <input class="pagination__current-page" (input)="onSetPage($event)" [value]="currentPage"> / <span>{{allPagesNumber}}</span>
+    <!-- <input
+      class="pagination__current-page"
+      (input)="onSetPage($event)"
+      [value]="currentPage"
+    /> -->
+    <span>{{ currentPage }}</span>
   </div>
-  <div class="pagination__button pagination__page-next"
-       (click)="onNextPage()"
-  >
+  <div class="pagination__button pagination__page-next" (click)="onNextPage()">
     Next
   </div>
-  <div class="pagination__button pagination__page-last"
-       (click)="onLastPage()"
-  >
+  <div class="pagination__button pagination__page-last" (click)="onLastPage()">
     Last
   </div>
 </div>

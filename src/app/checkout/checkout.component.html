@@ -1,25 +1,41 @@
 <app-header></app-header>
 <app-back-nav
-  [backNavTitle]="baclNavTitle"
+  [backNavTitle]="bacKNavTitle"
   [backNavLink]="navLink"
   [buttonTitle]="buttonTitle"
   [navLink]="navLink"
   [isBtnDisabled]="isPlaceOrderBtnDisabled"
   [itemsInCart]="checkoutListCount"
 ></app-back-nav>
-<div class="empty-checkout-list" *ngIf="!hasProcducts">No products avaliable currently.</div>
-<div *ngIf="hasProcducts">
-    <h1>Checkout Details</h1>
-  <div *ngFor="let product of checkoutList">
-    <div class="checkout-card">
-      <div>
-        <p>{{ product.name }}</p>
-        <p>{{ product.price }}</p>
+<div class="empty-checkout-list" *ngIf="!hasProcducts">
+  <h1>No products avaliable currently.</h1>
+</div>
+<div *ngIf="hasProcducts" class="checkout-container">
+  <h1>Checkout Details</h1>
+  <div class="checkout-section">
+    <div *ngFor="let product of checkoutList">
+      <div class="checkout-card">
+        <div>
+          <p>
+            <b>{{ product.name }}</b>
+          </p>
+          <p>
+            <b>{{ product.price | currency }}</b>
+          </p>
+        </div>
+        <div class="delete-product">
+          <button class="delete-product-btn" (click)="removeFromCart(product)">
+            Remove
+          </button>
+        </div>
       </div>
-      <div class="delete-product">
-        <button class="delete-product-btn" (click)="removeFromCart(product)">
-          Remove
-        </button>
+    </div>
+    <hr />
+    <h2>Order Summary</h2>
+    <div class="order-summary">
+      <label><b>Total Amount </b></label>
+      <div>
+        <b>{{ totalAmount | currency }}</b>
       </div>
     </div>
   </div>

@@ -1,5 +1,12 @@
 h1 {
-    text-align: center;
+  text-align: center;
+}
+
+.checkout-section {
+  padding: 1rem;
+  border: 1px solid #e1e2f0;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 rgba(42, 45, 48, 0.12);
 }
 
 .checkout-card {
@@ -23,7 +30,17 @@ h1 {
   cursor: pointer;
 }
 
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media only screen and (min-width: 769px) {
+  .checkout-container {
+    max-width: 50%;
+    margin: auto;
+  }
+
   .checkout-card {
     display: flex;
     justify-content: space-between;
